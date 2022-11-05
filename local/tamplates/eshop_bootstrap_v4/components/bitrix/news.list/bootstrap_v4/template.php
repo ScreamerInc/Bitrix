@@ -21,7 +21,6 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
 		<? if ($arParams["DISPLAY_TOP_PAGER"]) : ?>
 			<?= $arResult["NAV_STRING"] ?><br />
 		<? endif; ?>
-
 		<div class="row">
 			<? foreach ($arResult["ITEMS"] as $arItem) : ?>
 				<?
@@ -43,17 +42,14 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
 					array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
 				);
 				?>
-
-
-
 				<div class="news-list-item mb-2 col-sm" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+				<!-- Работа над карточкой офиса и подключение Карты -->
 					<div class="card_list">
-						<!-- <?php print_r($arItem) ?> -->
 						<div class="office_card">
 							<a class="link_office_card" href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><h2 class="office_card_name"><?= $arItem["NAME"];?></h2></a>
 							<div class="office_details">
 								<ul class="card_properties">
-									<?php $numblock = 0; ?>
+									<!-- Создание свойств карточки офиса и подключение Карты -->
 									<? foreach ($arItem["DISPLAY_PROPERTIES"] as $pid => $arProperty) : ?>
 										<li class="propertie_office">
 											<?
@@ -62,7 +58,9 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
 											else
 												$value = $arProperty["DISPLAY_VALUE"];
 											?>
+											<!-- Не пустой массив -->
 											<? if ($value != "") : ?>
+												<!-- Если не карта, заносить шаблон классов для свойств -->
 												<? if ($arProperty["CODE"] !== "YANDEX_MAP_OFFICE_RU") : ?>
 													<div class="news_list_view">
 														<span class="office_list_icon"></span>
@@ -70,13 +68,12 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
 														<span class="office_list_value"><?= $value; ?></span>
 													</div>
 												<? else : ?>
+													<!-- Если заданы данные в карту, то изменить классы полей -->
 													<div class="news_list_view_yandex_map">
 														<span class="office_list_icon_yandex_map"></span>
 														<span class="office_yandex_map"><?= $value; ?></span>
 													</div>
 												<? endif; ?>
-
-
 											<? endif; ?>
 										</li>
 									<? endforeach; ?>

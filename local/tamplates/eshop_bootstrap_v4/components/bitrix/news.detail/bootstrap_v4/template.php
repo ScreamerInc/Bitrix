@@ -17,7 +17,7 @@ CUtil::InitJSCore(['fx', 'ui.fonts.opensans']);
 <div class="news-detail<?= $themeClass ?>">
 	<div class="mb-3" id="<? echo $this->GetEditAreaId($arResult['ID']) ?>">
 
-
+		<!-- Перебор свойств в детальной карточке и подключаем Карту -->
 		<? foreach ($arResult["DISPLAY_PROPERTIES"] as $pid => $arProperty) : ?>
 			<li class="propertie_office">
 				<?

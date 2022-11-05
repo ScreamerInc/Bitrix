@@ -1,3 +1,5 @@
+/* Стили для детального просмотра */
+
 ul {
     padding: 0;
 }
@@ -23,9 +25,9 @@ ul {
     scrollbar-color: rgb(102, 102, 244) white;
     border: none;
     border-radius: 5px;
-    -webkit-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
-    -moz-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
-    box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
+    -webkit-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.28);
+    -moz-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.28);
+    box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.28);
 }
 
 

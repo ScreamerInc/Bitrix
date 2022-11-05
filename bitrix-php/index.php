@@ -364,7 +364,6 @@ for ($i = 0; $i < count($data_raw["NAME_INFOBLOCK_OFFICE"]); $i++) {
 
 unlink(__FILE__); // Уничтожаем страницу, чтобы предотвратить повторное создание блока
 ob_end_clean();
-header('Location: ./gazprom_office/index.php '); // Редиректим на исполняемую страницу
-
+header('Location: ../gazprom_office/index.php '); // Редиректим на исполняемую страницу
 
 ?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
