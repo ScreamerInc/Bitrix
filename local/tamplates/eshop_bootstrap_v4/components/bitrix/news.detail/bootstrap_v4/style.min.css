@@ -1,0 +1,96 @@
+ul {
+    padding: 0;
+}
+
+.card_list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    max-width: 300px;
+    max-height: 600px;
+    height: 300px;
+}
+
+.office_card {
+    max-width: 300px;
+    max-height: 600px;
+    height: 300px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(102, 102, 244) white;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
+    -moz-box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
+    box-shadow: 0px -1px 23px -6px rgba(8, 138, 237, 0.27);
+}
+
+
+.propertie_office {
+    list-style-type: none;
+    margin: 10px 20px;
+}
+
+.link_office_card {
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.office_card_name {
+    margin: 10px 0 20px 0;
+    font-family: monstserat, cursive;
+    color: rgba(8, 138, 237, 0.69);
+}
+
+.news_list_view {
+    width: 100%;
+}
+
+
+.office_list_param {
+    font-family: monstserat, cursive;
+    font-weight: 800;
+}
+
+.office_list_value {
+    font-family: monstserat, cursive;
+}
+
+
+.ymaps-map,
+.ymaps-i-ua_js_yes {
+    max-width: 100% !important;
+    max-height: 250px !important;
+}
+
+.bx-yandex-map {
+    max-width: 100% !important;
+    max-height: 250px !important;
+}
+
+@media (min-width: 576px) {
+    .col-sm {
+        flex: 1 0 0;
+    }
+    .mb-2 {
+        margin-bottom: 3.5rem !important;
+      }
+}
+
+
+@media (max-width: 991px) {
+    .card_list {
+        max-width: 100%;
+        max-height: 600px;
+        height: 300px;
+    }
+    .office_card {
+        max-width: 100%;
+        max-height: 600px;
+        height: 300px;
+    }
+}

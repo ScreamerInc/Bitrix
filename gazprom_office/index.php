@@ -1,13 +1,15 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Яндекс Карты");
+session_start();
+$ID = $_SESSION['ID'];
+$APPLICATION->SetTitle("Офисы Газпром");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news_new", 
 	array(
 		"COMPONENT_TEMPLATE" => "news_new",
 		"IBLOCK_TYPE" => "news",
-		"IBLOCK_ID" => "",
+		"IBLOCK_ID" => "{$ID}",
 		"NEWS_COUNT" => "20",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -20,7 +22,7 @@ $APPLICATION->SetTitle("Яндекс Карты");
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "Y",
-		"SEF_MODE" => "N",
+		"SEF_MODE" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
@@ -55,8 +57,6 @@ $APPLICATION->SetTitle("Яндекс Карты");
 			4 => "KOORDINATION_OFFICE_Y",
 			5 => "CITY_OFFICE",
 			6 => "YANDEX_MAP_OFFICE_RU",
-			7 => "YANDEX_MAP",
-			8 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
@@ -77,8 +77,6 @@ $APPLICATION->SetTitle("Яндекс Карты");
 			4 => "KOORDINATION_OFFICE_Y",
 			5 => "CITY_OFFICE",
 			6 => "YANDEX_MAP_OFFICE_RU",
-			7 => "YANDEX_MAP",
-			8 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
@@ -108,9 +106,11 @@ $APPLICATION->SetTitle("Яндекс Карты");
 		"COLOR_NEW" => "3E74E6",
 		"COLOR_OLD" => "C0C0C0",
 		"TAGS_CLOUD_WIDTH" => "100%",
-		"VARIABLE_ALIASES" => array(
-			"SECTION_ID" => "SECTION_ID",
-			"ELEMENT_ID" => "ELEMENT_ID",
+		"SEF_FOLDER" => "/gazprom_office/",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+			"section" => "",
+			"detail" => "#ELEMENT_ID#/",
 		)
 	),
 	false
